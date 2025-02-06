@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, DateTimeField, SelectField, SubmitField
+from wtforms import StringField, DateTimeField, SelectField, SubmitField, PasswordField
 from wtforms.validators import DataRequired, Length, ValidationError
 import re
 from datetime import datetime
@@ -27,3 +27,8 @@ class AppointmentForm(FlaskForm):
         # Validate Israeli phone number format
         if not re.match(r'^(0[2-9]\d{8}|[1-9]\d{8})$', field.data):
             raise ValidationError('אנא הזן מספר טלפון תקין')
+
+class LoginForm(FlaskForm):
+    username = StringField('שם משתמש', validators=[DataRequired(message='אנא הזן שם משתמש')])
+    password = PasswordField('סיסמה', validators=[DataRequired(message='אנא הזן סיסמה')])
+    submit = SubmitField('התחבר')

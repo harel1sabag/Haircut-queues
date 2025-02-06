@@ -22,9 +22,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('book_appointment') }}">קביעת תור</a>
                     </li>
+                    {% if session.get('logged_in') %}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('manage_appointments') }}">ניהול תורים</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('logout') }}">התנתקות</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('login') }}">כניסה למנהלים</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

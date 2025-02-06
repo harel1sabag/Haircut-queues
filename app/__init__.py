@@ -9,7 +9,7 @@ is_production = os.environ.get('ENV') == 'production'
 app = Flask(__name__)
 
 # Secret Key
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'fallback_secret_key_for_development')
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'development_secret_key_for_sessions')
 
 # Database Configuration
 if is_production:
