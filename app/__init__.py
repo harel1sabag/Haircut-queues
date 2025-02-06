@@ -3,13 +3,18 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap5
 import os
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'your_secret_key_here')
+# Determine environment
+is_production = os.environ.get('ENV') == 'production'
 
-# Database configuration
-if os.environ.get('DATABASE_URL'):
-    # Production: use PostgreSQL
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace('postgres://', 'postgresql://')
+app = Flask(__name__)
+
+# Secret Key
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'fallback_secret_key_for_development')
+
+# Database Configuration
+if is_production:
+    # Production: use PostgreSQL from environment variable
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '').replace('postgres://', 'postgresql://')
 else:
     # Development: use SQLite
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///haircut_appointments.db'
