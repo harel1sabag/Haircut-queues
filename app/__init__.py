@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_bootstrap import Bootstrap5
+from flask_bootstrap import Bootstrap
 import os
 
 # Determine environment
@@ -22,6 +22,6 @@ else:
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
-bootstrap = Bootstrap5(app)
+bootstrap = Bootstrap(app)
 
 from app import routes, models

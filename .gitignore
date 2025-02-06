@@ -1,17 +1,9 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
+# Dependencies
+node_modules/
 
-# Virtual Environment
-venv/
-env/
-.venv
-
-# Database
-*.db
-*.sqlite3
+# Environment files
+.env
+.env.local
 
 # IDE files
 .vscode/
@@ -26,13 +18,9 @@ Thumbs.db
 # Logs
 *.log
 
-# Distribution / packaging
+# Build output
 dist/
 build/
-*.egg-info/
-
-# Jupyter Notebook
-.ipynb_checkpoints
 
 # Sensitive information
 secrets.json

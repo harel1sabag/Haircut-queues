@@ -76,4 +76,14 @@ function filterAppointments() {
         `;
         tbody.appendChild(tr);
     });
+}
+
+// בדיקת סיסמת מנהל
+if (!localStorage.getItem('isAdmin')) {
+    const password = prompt('נא להזין סיסמת מנהל:');
+    if (password !== 'YOUR_ADMIN_PASSWORD') {
+        window.location.href = 'index.html';
+    } else {
+        localStorage.setItem('isAdmin', true);
+    }
 } 
