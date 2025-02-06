@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% import 'bootstrap5/form.html' as wtf %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h2 class="text-center mb-4">{% if editing %}ערוך תור{% else %}קביעת תור חדש{% endif %}</h2>
+        <form method="POST" action="{{ url_for('edit_appointment', id=form.obj.id) if editing else url_for('book_appointment') }}">
+            {{ form.hidden_tag() }}
+            
+            <div class="mb-3">
+                {{ form.full_name.label(class="form-label") }}
+                {{ form.full_name(class="form-control " + ("is-invalid" if form.full_name.errors else "")) }}
+                {% if form.full_name.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.full_name.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="mb-3">
+                {{ form.phone_number.label(class="form-label") }}
+                {{ form.phone_number(class="form-control " + ("is-invalid" if form.phone_number.errors else "")) }}
+                {% if form.phone_number.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.phone_number.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="mb-3">
+                {{ form.date.label(class="form-label") }}
+                {{ form.date(class="form-control " + ("is-invalid" if form.date.errors else ""), type="datetime-local") }}
+                {% if form.date.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.date.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="mb-3">
+                {{ form.hairdresser.label(class="form-label") }}
+                {{ form.hairdresser(class="form-select " + ("is-invalid" if form.hairdresser.errors else "")) }}
+                {% if form.hairdresser.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.hairdresser.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="mb-3">
+                {{ form.device.label(class="form-label") }}
+                {{ form.device(class="form-select " + ("is-invalid" if form.device.errors else "")) }}
+                {% if form.device.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.device.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            {{ form.submit(class="btn btn-primary w-100") }}
+        </form>
+    </div>
+</div>
+{% endblock %}

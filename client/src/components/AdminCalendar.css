@@ -1,0 +1,27 @@
+.admin-calendar {
+  padding: 20px;
+  direction: rtl;
+}
+
+.filters {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.filters input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* רספונסיביות */
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+  }
+  
+  .filters input {
+    width: 100%;
+  }
+} 
