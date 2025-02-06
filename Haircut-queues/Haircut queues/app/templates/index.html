@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2 text-center">
+        <h1 class="display-4">ברוכים הבאים לתורים לספרות</h1>
+        <p class="lead">קבע תור בקלות ובמהירות עם הספרים המקצועיים שלנו</p>
+        <div class="mt-4">
+            <a href="{{ url_for('book_appointment') }}" class="btn btn-primary btn-lg">קבע תור עכשיו</a>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">קביעת תור פשוטה</h5>
+                <p class="card-text">בחר תאריך, שעה, ספר ומכשיר בקלות</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">ניהול תורים</h5>
+                <p class="card-text">צפה, ערוך ומחק תורים בלוח שנה מרכזי</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">עיצוב רספונסיבי</h5>
+                <p class="card-text">מותאם לכל מכשירים - מחשב, טאבלט וסמארטפון</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

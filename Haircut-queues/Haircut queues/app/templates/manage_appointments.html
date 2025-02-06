@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2 class="text-center mb-4">ניהול תורים</h2>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>שם מלא</th>
+                    <th>טלפון</th>
+                    <th>תאריך</th>
+                    <th>ספר</th>
+                    <th>מכשיר</th>
+                    <th>פעולות</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for appointment in appointments %}
+                <tr>
+                    <td>{{ appointment.full_name }}</td>
+                    <td>{{ appointment.phone_number }}</td>
+                    <td>{{ appointment.date.strftime('%Y-%m-%d %H:%M') }}</td>
+                    <td>{{ appointment.hairdresser }}</td>
+                    <td>{{ appointment.device }}</td>
+                    <td>
+                        <div class="btn-group" role="group">
+                            <a href="{{ url_for('edit_appointment', id=appointment.id) }}" class="btn btn-sm btn-warning">ערוך</a>
+                            <form method="POST" action="{{ url_for('delete_appointment', id=appointment.id) }}" class="d-inline" onsubmit="return confirm('האם אתה בטוח שברצונך למחוק תור זה?');">
+                                <button type="submit" class="btn btn-sm btn-danger">מחק</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

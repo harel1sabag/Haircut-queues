@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ניהול תורים - מספרה</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1>המספרה שלנו</h1>
+            <ul>
+                <li><a href="index.html">הזמנת תור</a></li>
+                <li><a href="admin.html">ניהול תורים</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="admin-panel">
+            <h2>ניהול תורים</h2>
+            
+            <div class="filters">
+                <input type="date" id="filterDate" placeholder="סנן לפי תאריך">
+                <select id="filterBarber">
+                    <option value="">כל הספרים</option>
+                    <option value="1">יוסי</option>
+                    <option value="2">משה</option>
+                    <option value="3">דוד</option>
+                </select>
+                <input type="text" id="filterCustomer" placeholder="חפש לקוח">
+            </div>
+
+            <div class="appointments-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>תאריך</th>
+                            <th>שעה</th>
+                            <th>ספר</th>
+                            <th>שם הלקוח</th>
+                            <th>טלפון</th>
+                            <th>פעולות</th>
+                        </tr>
+                    </thead>
+                    <tbody id="appointmentsList">
+                        <!-- הנתונים יוכנסו כאן דרך JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html> 

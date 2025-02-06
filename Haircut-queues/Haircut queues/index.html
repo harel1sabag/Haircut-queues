@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מספרה - הזמנת תורים</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1>המספרה שלנו</h1>
+            <ul>
+                <li><a href="index.html">הזמנת תור</a></li>
+                <li><a href="admin.html">ניהול תורים</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="booking-form">
+            <h2>קביעת תור לתספורת</h2>
+            <form id="appointmentForm">
+                <div class="form-group">
+                    <label for="date">תאריך:</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="time">שעה:</label>
+                    <select id="time" required>
+                        <option value="">בחר שעה</option>
+                        <option value="09:00">09:00</option>
+                        <option value="09:30">09:30</option>
+                        <option value="10:00">10:00</option>
+                        <option value="10:30">10:30</option>
+                        <option value="11:00">11:00</option>
+                        <option value="11:30">11:30</option>
+                        <option value="12:00">12:00</option>
+                        <option value="12:30">12:30</option>
+                        <option value="13:00">13:00</option>
+                        <option value="13:30">13:30</option>
+                        <option value="14:00">14:00</option>
+                        <option value="14:30">14:30</option>
+                        <option value="15:00">15:00</option>
+                        <option value="15:30">15:30</option>
+                        <option value="16:00">16:00</option>
+                        <option value="16:30">16:30</option>
+                        <option value="17:00">17:00</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="barber">בחר ספר:</label>
+                    <select id="barber" required>
+                        <option value="">בחר ספר</option>
+                        <option value="1">יוסי</option>
+                        <option value="2">משה</option>
+                        <option value="3">דוד</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">שם מלא:</label>
+                    <input type="text" id="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">מספר טלפון:</label>
+                    <input type="tel" id="phone" required>
+                </div>
+
+                <button type="submit">קבע תור</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 
